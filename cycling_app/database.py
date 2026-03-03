@@ -33,7 +33,7 @@ def get_rides():
 def get_stats(): 
     conn = sqlite3.connect('rides.db')
     cursor = conn.cursor()
-    cursor.execute("SELECT SUM(distance) AS total_distance, SUM(duration) AS total_duration FROM rides")
+    cursor.execute("SELECT SUM(distance) AS total_distance, SUM(duration) AS total_duration, COUNT(*) as total_rides FROM rides")
     stats = cursor.fetchone()
     conn.commit()
     conn.close()

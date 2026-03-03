@@ -27,6 +27,7 @@ def home():
 
 @app.route("/stats/")
 def stats(): 
+    stats = get_stats()
     rides = get_rides()
     ride_dates = {ride[3] for ride in rides}
     today = datetime.now()
@@ -34,7 +35,8 @@ def stats():
     cal = calendar.monthcalendar(today.year, today.month)
     print(ride_dates)
     return render_template(
-        "stats.html", 
+        "stats.html",
+        stats=stats,  
         rides=rides, 
         ride_dates=ride_dates,
         month = today.month,

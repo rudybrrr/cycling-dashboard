@@ -3,7 +3,7 @@
 Cycling Dashboard
 {% endblock %}
 {% block content %}
-<h3>Your Statistics</h3>
+<h3>Lifetime Statistics</h3>
 <div class="stats-container">
     <div class="stats-card">
         <span class="stats-label">Total Distance</span>
@@ -12,6 +12,10 @@ Cycling Dashboard
     <div class="stats-card">
         <span class="stats-label">Total Duration</span>
         <span class="stats-value">{{ stats[1] }}min</span>
+    </div>
+    <div class="stats-card">
+        <span class="stats-label">No of Rides</span>
+        <span class="stats-value">{{ stats[2] }}</span>
     </div>
 </div>
 <h3>Log Your Latest Ride!</h3>

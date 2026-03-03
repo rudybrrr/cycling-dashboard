@@ -3,6 +3,21 @@
 Stats
 {% endblock %}
 {% block content %}
+<h3>Lifetime Statistics</h3>
+<div class="stats-container">
+    <div class="stats-card">
+        <span class="stats-label">Total Distance</span>
+        <span class="stats-value">{{ stats[0] }}km</span>
+    </div>
+    <div class="stats-card">
+        <span class="stats-label">Total Duration</span>
+        <span class="stats-value">{{ stats[1] }}min</span>
+    </div>
+    <div class="stats-card">
+        <span class="stats-label">No of Rides</span>
+        <span class="stats-value">{{ stats[2] }}</span>
+    </div>
+</div>
 <h3>{{ month_name }} {{ year }}</h3>
 <div class="calendar">
     <div class="calendar-header">
