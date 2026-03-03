@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* Backgrounds & Surfaces */
+    --bg-main: #1F211E;
+    --bg-surface: #2D302C;
+    --border-subtle: #3A3D38;
+
+    /* Text Colors */
+    --text-primary: #E8E6E1;
+    --text-muted: #A7B39B;
+
+    /* Accents */
+    --accent-primary: #D4A373;
+    --accent-hover: #bc8a5f;
+    --accent-border: #c4976b;
+    --accent-border-hover: #a67a54;
+
+    /* Typography */
+    --font-main: 'Exo 2', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    margin: 0;
+    padding: 20px;
+}
+
+input[type="number"],
+input[type="date"] {
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    border: 1px solid var(--border-subtle);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: var(--accent-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--accent-border);
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer; 
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+}
+
+input[type="submit"]:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-border-hover); 
+}
+
+input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+.rides-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.ride-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+    padding: 15px 20px; 
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 5px solid var(--accent-primary);
+}
+
+.ride-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    border-left-color: var(--accent-hover);
+}
+
+.navbar {
+    background-color: var(--bg-surface);
+    font-family: var(--font-main);
+    color: var(--text-primary);
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.navbar-item {
+    font-variant: small-caps;
+    margin-left: 30px;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.message {
+    font-weight: 700;
+    color: var(--accent-primary);
+}
+
+.navbar-brand {
+    font-size: 1.4em;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.5px;
+}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}
+Cycling Dashboard
+{% endblock %}
+{% block content %}
+<h3>Log Your Latest Ride!</h3>
+<form method="POST">
+    <label for="distance">Distance (km)</label>
+    <input type="number" id="distance" name="distance" required><br><br>
+    <label for="duration">Duration (min)</label>
+    <input type="number" id="duration" name="duration" required><br><br>
+    <label for="date">Date</label>
+    <input type="date" id="date" name="date" required><br><br>
+    <input type="submit" value="Log Ride">
+</form>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+<h3>Your Rides</h3>
+<!-- <ul>
+    {% for ride in rides %}
+        <li>Distance: {{ ride[1] }}km | Duration: {{ ride[2] }}min | Date: {{ ride[3] }}</li>
+    {% endfor %}
+</ul> -->
+<div class="rides-list">
+    {% for ride in rides %}
+        <div class="ride-card">
+            <span>{{ ride[1] }}km</span>
+            <span>{{ ride[2] }}min</span>
+            <span>{{ ride[3] }}</span>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %} 
