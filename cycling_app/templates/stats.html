@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}
+Stats
+{% endblock %}
+{% block content %}
+<h3>{{ month_name }} {{ year }}</h3>
+<div class="calendar">
+    <div class="calendar-header">
+        <span>Mon</span>
+        <span>Tue</span>
+        <span>Wed</span>
+        <span>Thu</span>
+        <span>Fri</span>
+        <span>Sat</span>
+        <span>Sun</span>
+    </div>
+    {% for week in cal %}
+        <div class="calendar-week">
+            {% for day in week %}
+                {% if day == 0 %}
+                    <div class="calendar-day empty"></div>
+                {% else %}
+                    {% set date_str = "%04d-%02d-%02d" | format(year, month, day) %}
+                    <div class="calendar-day {% if date_str in ride_dates %}has-ride{% endif %}">
+                        {{ day }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
