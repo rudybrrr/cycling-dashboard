@@ -3,6 +3,17 @@
 Cycling Dashboard
 {% endblock %}
 {% block content %}
+<h3>Your Statistics</h3>
+<div class="stats-container">
+    <div class="stats-card">
+        <span class="stats-label">Total Distance</span>
+        <span class="stats-value">{{ stats[0] }}km</span>
+    </div>
+    <div class="stats-card">
+        <span class="stats-label">Total Duration</span>
+        <span class="stats-value">{{ stats[1] }}min</span>
+    </div>
+</div>
 <h3>Log Your Latest Ride!</h3>
 <form method="POST">
     <label for="distance">Distance (km)</label>
@@ -23,11 +34,6 @@ Cycling Dashboard
   {% endif %}
 {% endwith %}
 <h3>Your Rides</h3>
-<!-- <ul>
-    {% for ride in rides %}
-        <li>Distance: {{ ride[1] }}km | Duration: {{ ride[2] }}min | Date: {{ ride[3] }}</li>
-    {% endfor %}
-</ul> -->
 <div class="rides-list">
     {% for ride in rides %}
         <div class="ride-card">

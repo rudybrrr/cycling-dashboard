@@ -29,3 +29,12 @@ def get_rides():
     conn.commit()
     conn.close()
     return rides
+
+def get_stats(): 
+    conn = sqlite3.connect('rides.db')
+    cursor = conn.cursor()
+    cursor.execute("SELECT SUM(distance) AS total_distance, SUM(duration) AS total_duration FROM rides")
+    stats = cursor.fetchone()
+    conn.commit()
+    conn.close()
+    return stats
